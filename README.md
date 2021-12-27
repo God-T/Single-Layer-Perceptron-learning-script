@@ -11,4 +11,4 @@ Display steps and outcome of perceptron learning process
 Modify `dataSet` staring `w0` `w1` `w2` and learning rate `lr` based on different trainings
 
 - `label` in `dataSet` should be unique
-- `c` in `dataSet` stands for 2 classes: `0` means false; `1` means true;
+- `c` in `dataSet` stands for 2 types of classification(+/-) : `0` means false; `1` means true;
