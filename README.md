@@ -1,10 +1,10 @@
 # Single-Layer-Perceptron-learning-script
 Display steps and outcome of perceptron learning process
 
-### Run with `Node perceptron.js`
+# Run with `Node perceptron.js`
 
 
-### *Note
+# *Note
 
 Modify `dataSet` staring `w0` `w1` `w2` and learning rate `lr` based on different trainings
 
