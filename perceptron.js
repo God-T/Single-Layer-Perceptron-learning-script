@@ -47,7 +47,7 @@ const addWeights = ({ x1, x2 }) => {
 const lastItem = 'dataSet[dataSet.length - 1].label';
 let res = [];
 let noOfNonAction = 0;
-while (noOfNonAction < 3) {
+while (noOfNonAction <= 3) {
   dataSet.map(data => {
     const w0_pre = w0;
     const w1_pre = w1;
@@ -73,7 +73,7 @@ while (noOfNonAction < 3) {
         Action: action,
       },
     ];
-    if (label === lastItem && noOfNonAction < 3) {
+    if (label === lastItem && noOfNonAction <= dataSet.length) {
       noOfNonAction = 0;
     }
   });
