@@ -1,26 +1,36 @@
 /* set inputs */
 
-// wk1 exe q2
+// // wk1 exe q2
+// const dataSet = [
+//   { label: 'a', x1: 0, x2: 1, class: 0 },
+//   { label: 'b', x1: 2, x2: 0, class: 0 },
+//   { label: 'c', x1: 1, x2: 1, c: 1 },
+// ];
+// const lr = 1;
+// let w0 = -1.5;
+// let w1 = 0;
+// let w2 = 2;
+
+// exam sample:
+// const dataSet = [
+//   { label: 'a', x1: 2, x2: 1, c: 1 },
+//   { label: 'b', x1: -2, x2: 2, c: 1 },
+//   { label: 'c', x1: -1, x2: -1, c: 0 },
+// ];
+// const lr = 1;
+// let w0 = -0.5;
+// let w1 = -1;
+// let w2 = -2;
+
 const dataSet = [
-  { label: 'a', x1: 0, x2: 1, c: 0 },
-  { label: 'b', x1: 2, x2: 0, c: 0 },
-  { label: 'c', x1: 1, x2: 1, c: 1 },
+  { label: 'a', x1: -2, x2: 2, c: 1 },
+  { label: 'b', x1: 2, x2: 1, c: 0 },
+  { label: 'c', x1: -1, x2: -1, c: 0 },
 ];
 const lr = 1;
-let w0 = -1.5;
-let w1 = 0;
-let w2 = 2;
-
-// // exam sample:
-// const dataSet = [
-//     { label: 'a', x1: -2, x2: 2, c: 1 },
-//     { label: 'b', x1: 2, x2: 1, c: 0 },
-//     { label: 'c', x1: -1, x2: -1, c: 0 },
-//   ];
-//   const lr = 1;
-//   let w0 = -0.5;
-//   let w1 = -1;
-//   let w2 = -2;
+let w0 = -0.5;
+let w1 = -1;
+let w2 = -2;
 
 console.log('\nGiven data:');
 console.table(dataSet);
@@ -44,10 +54,10 @@ const addWeights = ({ x1, x2 }) => {
 };
 
 /* run main */
-const lastItem = 'dataSet[dataSet.length - 1].label';
+const lastItem = dataSet[dataSet.length - 1].label;
 let res = [];
 let noOfNonAction = 0;
-while (noOfNonAction <= 3) {
+while (noOfNonAction < dataSet.length) {
   dataSet.map(data => {
     const w0_pre = w0;
     const w1_pre = w1;
@@ -73,7 +83,7 @@ while (noOfNonAction <= 3) {
         Action: action,
       },
     ];
-    if (label === lastItem && noOfNonAction <= dataSet.length) {
+    if (label === lastItem && noOfNonAction < 3) {
       noOfNonAction = 0;
     }
   });
